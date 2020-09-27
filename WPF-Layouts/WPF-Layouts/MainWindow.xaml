@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Layouts"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="200" Width="800">
 
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="0 0 0 10px" />
+            <Setter Property="FontSize" Value="16px" />
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnStackPanel" Grid.Row="0" Content="StackPanel" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnDock" Grid.Row="1" Content="Dock" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnGrid" Grid.Row="2" Content="Grid" />
+        <Button Style="{StaticResource ButtonStyle}" x:Name="btnGridSplitter" Grid.Row="3" Content="Grid Splitter" />
     </Grid>
 </Window>

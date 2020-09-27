@@ -23,6 +23,37 @@ namespace WPF_Layouts
         public MainWindow()
         {
             InitializeComponent();
+            btnStackPanel.Click += WindowButton_Click;
+            btnDock.Click += WindowButton_Click;
+            btnGrid.Click += WindowButton_Click;
+            btnGridSplitter.Click += WindowButton_Click;
+        }
+
+        private void WindowButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button pressedButton = (Button)sender;
+            string buttonContent = pressedButton.Content.ToString();
+
+            if(buttonContent.Equals("StackPanel"))
+            {
+                StackPanel stackPanel = new StackPanel();
+                stackPanel.Show();
+            }
+            else if(buttonContent.Equals("Dock"))
+            {
+                Dock dock = new Dock();
+                dock.Show();
+            }
+            else if(buttonContent.Equals("Grid"))
+            {
+                Grid grid = new Grid();
+                grid.Show();
+            }
+            else if(buttonContent.Equals("Grid Splitter"))
+            {
+                GridSplitter gridSplitter = new GridSplitter();
+                gridSplitter.Show();
+            }
         }
     }
 }
